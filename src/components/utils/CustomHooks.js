@@ -1,5 +1,27 @@
 import { useState } from 'react';
 
+const useSignUp = callback => {
+    const [inputs, setInputs] = useState({});
+
+    const handleSubmit = event => {
+        if (event) {
+            event.preventDefault();
+        }
+        callback();
+    }
+
+    const handleInputChange = event => {
+        event.persist();
+        setInputs(inputs => ({ ...inputs, [event.target.name]: event.target.value }));
+    }
+    
+    return {
+        handleSubmit,
+        handleInputChange,
+        inputs,
+    };
+}
+
 const useLoginForm = callback => {
     const [inputs, setInputs] = useState({});
 
@@ -22,4 +44,4 @@ const useLoginForm = callback => {
     };
 }
 
-export default useLoginForm;
+export default useSignUp;
