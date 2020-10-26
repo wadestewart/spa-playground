@@ -6,19 +6,20 @@ import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import CardHeader from '@material-ui/core/CardHeader';
 
-import { getUser } from '../utils/apiManager';
-
+import { postData } from '../../utils/apiManager';
+import useSignUp from '../../utils/CustomHooks';
 
 const Login = () => {
     const login = () => {
         const params = {
-            url: 'https://localhost:5001/api/Users',
+            url: 'https://localhost:5001/api/Users/authenticate',
             data: {
                 email,
+                password,
             },
         };
         
-        getUser(params)
+        postData(params)
         .then(data => console.log(data));
         // event.preventDefault();
     }

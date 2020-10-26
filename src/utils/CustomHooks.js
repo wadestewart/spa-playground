@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const useSignUp = callback => {
+export const useSignUp = callback => {
     const [inputs, setInputs] = useState({});
 
     const handleSubmit = event => {
@@ -22,7 +22,7 @@ const useSignUp = callback => {
     };
 }
 
-const useLoginForm = callback => {
+export const useLoginForm = callback => {
     const [inputs, setInputs] = useState({});
 
     const handleSubmit = event => {
@@ -43,5 +43,3 @@ const useLoginForm = callback => {
         inputs,
     };
 }
-
-export default useSignUp;
