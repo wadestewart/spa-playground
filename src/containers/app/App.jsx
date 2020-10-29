@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import Main from '../main/Main';
+import NavBar from '../navbar/NavBar';
 import { getUser } from '../../utils/apiManager';
 import './App.css';
 
@@ -21,7 +22,7 @@ const App = () => {
 
   return(
     <div>
-      {/* <Route path='/' component={Header} /> */}
+      <Route path='/' component={NavBar} />
       <Main name={name} />
       {/* <Footer /> */}
     </div>

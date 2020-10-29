@@ -12,7 +12,11 @@ export async function postData(params) {
         referrerPolicy: 'no-referrer',
         body: JSON.stringify(params.data)
     });
-    return response.json();
+    if (response.ok) {
+        return response.json();
+    } else {
+        console.log("Oh dear, we have an error.");
+    };
 }
 
 export async function getUser(params) {

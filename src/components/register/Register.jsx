@@ -10,7 +10,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import { useSignUp } from '../../utils/CustomHooks';
 import { postData } from '../../utils/apiManager';
 
-const SignUp = () => {
+const Register = () => {
     const signUp = () => {
         const params = {
             url: 'https://localhost:5001/api/Users',
@@ -210,4 +210,4 @@ const SignUp = () => {
 //     }
 // }
 
-export default SignUp;
+export default Register;
