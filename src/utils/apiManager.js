@@ -12,6 +12,8 @@ export async function postData(params) {
         referrerPolicy: 'no-referrer',
         body: JSON.stringify(params.data)
     });
+
+    // Check for successful response and return json
     if (response.ok) {
         return response.json();
     } else {
@@ -33,5 +35,10 @@ export async function getUser(params) {
         redirect: 'follow',
         referrerPolicy: 'no-referrer',
     });
-    return response.json();
+    // Check for successful response and return json
+    if (response.ok) {
+        return response.json();
+    } else {
+        console.log("Oh dear, we have an error.");
+    };
 }
