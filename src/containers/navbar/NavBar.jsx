@@ -1,9 +1,11 @@
 import React from 'react';
 import { clearJwtToken } from '../../utils/cookieManager';
 
-const NavBar = () => {
+const NavBar = props => {
+    const handleSetUser = props.handleSetUser;
     const handleLogout = () => {
         clearJwtToken();
+        handleSetUser({});
     };
     return (
         <div>
